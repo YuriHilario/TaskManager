@@ -1,0 +1,43 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form (ngSubmit)="onLogin()" #loginForm="ngForm" novalidate>
+    
+    <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input 
+        id="email"
+        type="email" 
+        name="email" 
+        [(ngModel)]="email" 
+        required
+        #emailField="ngModel"
+        placeholder="Digite seu e-mail"
+        autocomplete="username"
+      />
+      <div *ngIf="emailField.invalid && emailField.touched" class="error-message">
+        Por favor, insira um e-mail válido.
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="password">Senha:</label>
+      <input 
+        id="password"
+        type="password" 
+        name="password" 
+        [(ngModel)]="password" 
+        required
+        #passwordField="ngModel"
+        placeholder="Digite sua senha"
+        autocomplete="current-password"
+      />
+      <div *ngIf="passwordField.invalid && passwordField.touched" class="error-message">
+        A senha é obrigatória.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+
+    <p *ngIf="errorMessage" class="error-message server-error">{{ errorMessage }}</p>
+  </form>
+</div>

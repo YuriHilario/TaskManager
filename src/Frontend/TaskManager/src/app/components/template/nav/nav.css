@@ -1,0 +1,18 @@
+.sidenav{
+    background-color: #196ad4;
+    width: 10rem;
+}
+
+.sidenav i{
+    color: white;
+    padding: 1vw;
+}
+
+.icon-descript{
+    color: white;
+}
+
+.content{
+    padding: 2vw;
+    background-color: white;
+}
