@@ -18,7 +18,7 @@ namespace API.Repositories.Users
         public async Task<User?> GetByEmailAndPasswordAsync(string email, string passwordHash)
         {
             return await _context.Users
-                .FirstOrDefaultAsync(u => u.Email == email && u.Password == passwordHash);
+                .FirstOrDefaultAsync(u => u.email == email && u.password == passwordHash);
         }
 
     }

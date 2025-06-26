@@ -3,19 +3,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API.Models
 {
-    [Table("Users")]
+    [Table("users")]
     public class User
     {
         [Key]
-        public int Id { get; set; }
+        public int id { get; set; }
 
         [Required]
         [MaxLength(100)]
-        public string Email { get; set; }
+        public string email { get; set; }
 
         [Required]
         [MaxLength(100)]
-        [Column("PasswordHash")]
-        public string Password { get; set; }
-    }
+        [Column("passwordhash")]
+        public string password { get; set; }
+    }   
 }

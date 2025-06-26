@@ -24,7 +24,7 @@ if (string.IsNullOrEmpty(connectionString))
 
 // Register DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseNpgsql(connectionString));
 
 // Configure JWT Settings
 builder.Services.Configure<JwtSettings>(
@@ -61,7 +61,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:4200") // replace with your frontend URL
+        policy.WithOrigins("https://localhost:4200") // replace with your frontend URL
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials(); // only use this if credentials (cookies/auth) are needed

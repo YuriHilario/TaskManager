@@ -46,14 +46,14 @@ namespace API.Controllers.Tasks
         {
             var task = new TaskItem
             {
-                Title = dto.Title,
-                Description = dto.Description,
-                Priority = dto.Priority,
-                Status = dto.Status
+                title = dto.Title,
+                description = dto.Description,
+                priority = dto.Priority,
+                status = dto.Status
             };
 
             await _taskService.CreateTaskAsync(task);
-            return CreatedAtAction(nameof(GetById), new { id = task.Id }, task);
+            return CreatedAtAction(nameof(GetById), new { id = task.id }, task);
         }
 
 
@@ -67,11 +67,11 @@ namespace API.Controllers.Tasks
 
             var task = new TaskItem
             {
-                Id = dto.Id,
-                Title = dto.Title,
-                Description = dto.Description,
-                Priority = dto.Priority,
-                Status = dto.Status
+                id = dto.Id,
+                title = dto.Title,
+                description = dto.Description,
+                priority = dto.Priority,
+                status = dto.Status
             };
 
             var success = await _taskService.UpdateTaskAsync(task);
