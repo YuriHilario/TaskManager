@@ -30,14 +30,14 @@ namespace API.Services.Tasks
 
         public async Task<bool> UpdateTaskAsync(TaskItem task)
         {
-            var existing = await _repository.GetByIdAsync(task.Id);
+            var existing = await _repository.GetByIdAsync(task.id);
             if (existing == null)
                 return false;
 
-            existing.Title = task.Title;
-            existing.Description = task.Description;
-            existing.Priority = task.Priority;
-            existing.Status = task.Status;
+            existing.title = task.title;
+            existing.description = task.description;
+            existing.priority = task.priority;
+            existing.status = task.status;
 
             await _repository.UpdateAsync(existing);
             return true;

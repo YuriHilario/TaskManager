@@ -4,25 +4,25 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API.Models
 {
-    [Table("Tasks")]
+    [Table("tasks")]
     public class TaskItem
     {
         [Key]
-        public int Id { get; set; }
+        public int id { get; set; }
         
         [Required]
         [MaxLength(100)]
-        public string Title { get; set; }
-        public string Description { get; set; }
+        public string title { get; set; }
+        public string description { get; set; }
 
         [Required]
-        public Priority Priority { get; set; }
+        public Priority priority { get; set; }
 
         [Required]
-        public Status Status { get; set; }
+        public Status status { get; set; }
 
         [Required]
-        public DateTime DateCreation { get; private set; } = DateTime.UtcNow;
+        public DateTime datecreation { get; private set; } = DateTime.UtcNow;
 
     }
 }

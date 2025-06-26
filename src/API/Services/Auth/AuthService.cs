@@ -38,8 +38,8 @@ namespace API.Services.Auth
             // Cria claims para o token JWT
             var claims = new[]
             {
-        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-        new Claim(ClaimTypes.Email, user.Email)
+        new Claim(ClaimTypes.NameIdentifier, user.id.ToString()),
+        new Claim(ClaimTypes.Email, user.email)
     };
 
             // Configura chave secreta e credenciais de assinatura do token
